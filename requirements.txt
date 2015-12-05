@@ -13,6 +13,7 @@ django-haystack==2.3.1
 django-localflavor==1.1
 git+https://github.com/django-oscar/django-oscar.git
 git+https://github.com/django-oscar/django-oscar-paypal.git
+git+https://github.com/pauloprea/django-oscar-cash-on-delivery.git
 django-paypal==0.2.7
 django-sslserver==0.15
 django-tables2==1.0.4

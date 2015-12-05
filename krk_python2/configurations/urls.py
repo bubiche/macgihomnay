@@ -24,7 +24,8 @@ from paypal.express.dashboard.app import application as app_paypal
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^i18n/', include('django.conf.urls.i18n')),
+    url(r'^image_search/', include('image_search.urls', namespace='image_search')),
     url(r'', include(application.urls)),
     (r'^checkout/paypal/', include('paypal.express.urls')),
 	(r'^dashboard/paypal/express/', include(app_paypal.urls)),
-)+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
