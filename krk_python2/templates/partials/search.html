@@ -6,3 +6,8 @@
     </div>
     <input type="submit" value="{% trans "Search" %}" class="btn btn-default" />
 </form>
+
+<form method="post" action="{% url 'image_search:image_search' %}" class="navbar-form navbar-right" id="img_search" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" onchange="img_search.submit();" value="Search image" class="btn btn-default" name="image" />
+</form>

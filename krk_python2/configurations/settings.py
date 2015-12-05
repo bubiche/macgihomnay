@@ -44,10 +44,11 @@ INSTALLED_APPS = [
 	'django.contrib.sites',
 	'django.contrib.flatpages',
 	'compressor',
-    	'widget_tweaks',
+    'widget_tweaks',
 	'paypal',
 	'django_extensions',
-	"sslserver",
+	'sslserver',
+    'image_search',
 ] + get_core_apps()
 
 SITE_ID = 1
@@ -62,7 +63,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
 	'oscar.apps.basket.middleware.BasketMiddleware',
-    	'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
 ROOT_URLCONF = 'configurations.urls'
@@ -113,15 +114,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
@@ -179,7 +175,7 @@ OSCAR_ORDER_STATUS_PIPELINE = {
 
 # Paypal API
 # Paypal don't have VND so use USD instead
-PAYPAL_CURRENCY = 'USD' 
+PAYPAL_CURRENCY = 'USD'
 
 PAYPAL_API_USERNAME = 'cs300_seller_api1.apcs.vn'
 PAYPAL_API_PASSWORD = '4ATUUUQX7CUNVAJT'
@@ -189,23 +185,13 @@ PAYPAL_API_SIGNATURE ='AFcWxV21C7fd0v3bYYYRCpSSRl31A01iTQjQEy5VpjvTyVjXFe9TlCgl'
 from django.utils.translation import ugettext_lazy as _
 
 OSCAR_DASHBOARD_NAVIGATION.append(
-
     {
-
         'label': _('PayPal'),
-
         'icon': 'icon-globe',
-
         'children': [
-
             {
-
                 'label': _('Express transactions'),
-
                 'url_name': 'paypal-express-list',
-
             },
-
         ]
-
     })
