@@ -1,13 +1,21 @@
 {% load i18n %}
+{% load staticfiles %}
+<head>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="{% static 'search.css' %}">
+</head>
 
 <form method="get" action="{% url 'search:search' %}" class="navbar-form navbar-right">
     <div class="form-group">
         {{ search_form.q }}
     </div>
-    <input type="submit" value="{% trans "Search" %}" class="btn btn-default" />
+    <input style"font-family=Lobster;" type="submit" value="{% trans "Search" %}" class="btn btn-search" id="btn-search"/>
 </form>
 
 <form method="post" action="{% url 'image_search:image_search' %}" class="navbar-form navbar-right" id="img_search" enctype="multipart/form-data">
     {% csrf_token %}
-    <input type="file" onchange="img_search.submit();" value="Search image" class="btn btn-default" name="image" />
+    <label style="color:white;" for="file">Search Image</label>
+    <input type="file" name="file" id="file" onchange="img_search.submit();" class="btn btn-default" />
 </form>
+

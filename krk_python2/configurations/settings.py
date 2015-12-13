@@ -124,7 +124,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = location('../files/staticroot')
-
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
@@ -161,7 +163,7 @@ DATABASES = {
 }
 
 # Shop Name
-OSCAR_SHOP_NAME = 'Khoa Rau Kem'
+OSCAR_SHOP_NAME = 'Macgihomnay'
 
 OSCAR_DEFAULT_CURRENCY = 'USD'
 # Order settings
