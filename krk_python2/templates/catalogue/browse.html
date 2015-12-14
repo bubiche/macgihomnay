@@ -15,7 +15,7 @@
 {% block breadcrumbs %}
     <ul class="breadcrumb">
         <li>
-            <a href="{{ homepage_url }}">{% trans "Home" %}</a>
+            <a style="color: red;" href="{{ homepage_url }}">{% trans "Home" %}</a>
         </li>
         <li class="active">{{ summary }}</li>
     </ul>
@@ -26,7 +26,7 @@
     {% if tree_categories %}
         <h4>{% trans "Show results for" %}</h4>
         <div class="side_categories">
-            <ul class="nav nav-list">
+            <ul style="background-color: red" class="nav nav-list">
                 {% for tree_category, info in tree_categories %}
                     <li>
                     {% if tree_category.pk == category.pk %}

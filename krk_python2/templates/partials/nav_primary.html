@@ -1,12 +1,16 @@
 {% load currency_filters %}
 {% load category_tags %}
 {% load i18n %}
+{% load staticfiles %}
+<head>
+    <link rel="stylesheet" href="{% static 'navbar.css' %}">
+</head>
 
 <div class="navbar primary navbar-static-top navbar-inverse">
-    <div class="container-fluid">
+    <div style="margin: -1px -1px -1px -1px" class="container-fluid">
         <div class="navbar-header pull-right">
             {# This is used in mobile view #}
-            <a class="navbar-toggle" data-toggle="collapse" data-target=".primary-collapse">
+            <a  class="navbar-toggle" data-toggle="collapse" data-target=".primary-collapse">
                 <span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -15,24 +19,7 @@
             </a>
         </div>
 
-        <a class="btn btn-default navbar-btn btn-cart navbar-right visible-xs-inline-block" href="{% url 'basket:summary' %}">
-            <i class="icon-shopping-cart"></i>
-            {% trans "Basket" %}
-            {% if not request.basket.is_empty %}
-                {% if request.basket.is_tax_known %}
-                    {% blocktrans with total=request.basket.total_incl_tax|currency:request.basket.currency %}
-                        Total: {{ total }}
-                    {% endblocktrans %}
-                {% else %}
-                    {% blocktrans with total=request.basket.total_excl_tax|currency:request.basket.currency %}
-                        Total: {{ total }}
-                    {% endblocktrans %}
-                {% endif %}
-            {% endif %}
-        </a>
-
-
-        <div class="navbar-collapse primary-collapse collapse">
+        <div id="navbar" class="navbar-collapse primary-collapse collapse">
             {% block nav_dropdown %}
                 <ul id="browse" class="nav navbar-nav">
                     <li class="dropdown active {% if expand_dropdown %}open{% endif %}">
