@@ -1,13 +1,15 @@
 {% extends "layout.html" %}
 {% load promotion_tags %}
-
+{% load staticfiles %}
 {% comment %}
 Keep the same header and footer as the standard layout template but override the 
 main content area to split it into a sidebar and a content block
 {% endcomment %}
+
 {% block content_wrapper %}
-<div class="container-fluid page">
-    <div class="page_inner">
+
+<div style="margin-bottom:20px;" class="container-fluid page">
+    <div style="background-color:whitesmoke" id="page_inner" class="page_inner">
         {% block breadcrumbs %}{% endblock %}
         <div class="row">
 

@@ -1,0 +1,19 @@
+
+#btn-search{
+  background-color: #48CFAD !important;
+  color: white;
+  font-size: 15px;
+}
+label[for="file"] {
+  background-color: #48CFAD;
+  border-radius: 5px;
+  padding: 6.5px;
+  text-align: justify;
+  font-size: 15px;
+  font-weight: 100;
+  cursor: pointer;
+  margin-top: 1px;
+}
+input[type="file"] {
+  display: none;
+}
