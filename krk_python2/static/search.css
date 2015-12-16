@@ -1,18 +1,39 @@
-
 #btn-search{
   background-color: #48CFAD !important;
   color: white;
   font-size: 15px;
+  -webkit-transition-duration: 0.4s; 
+  transition-duration: 0.4s;
+  border-color: #48CFAD;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 6px;
+}
+#btn-search:hover {
+    background-color: white !important;
+    color:#48CFAD;
+    
 }
 label[for="file"] {
   background-color: #48CFAD;
+  color:white;
   border-radius: 5px;
-  padding: 6.5px;
+  padding: 6px;
   text-align: justify;
   font-size: 15px;
   font-weight: 100;
   cursor: pointer;
-  margin-top: 1px;
+  margin-top: 0px;
+  -webkit-transition-duration: 0.4s; 
+  transition-duration: 0.4s;
+  border-color: #48CFAD;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 6px;
+}
+label[for="file"]:hover {
+  background-color: white;
+  color: #48CFAD;
 }
 input[type="file"] {
   display: none;

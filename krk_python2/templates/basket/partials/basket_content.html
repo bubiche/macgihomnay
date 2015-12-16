@@ -1,12 +1,27 @@
 {% extends 'oscar/basket/partials/basket_content.html' %}
 {% load i18n %}
 {% load url from future %}
-
+{% load staticfiles %}
 {% block formactions %}
+<head>
+<link rel="stylesheet" href="{% static 'search.css' %}">
+</head>
+<style>
+#btn{
+  background-color:red;
+  color: white;
+  font-size: 15px;
+  transition-duration: 0.4s;
+}
+#btn:hover{
+  background-color: #4CAF50; 
+  color: white;
+}
+</style>
 <div class="form-actions">
     {% if anon_checkout_allowed or request.user.is_authenticated %}
         <a href="{% url 'paypal-redirect' %}"><img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" align="left" style="margin-right:7px;"></a>
     {% endif %}
-    <a href="{% url 'checkout:index' %}" class="pull-right btn btn-large btn-primary">{% trans "Proceed to checkout" %}</a>
+    <a id="btn" href="{% url 'checkout:index' %}" class="pull-right btn btn-large btn-primary">{% trans "Proceed to checkout" %}</a>
 </div>
 {% endblock %}

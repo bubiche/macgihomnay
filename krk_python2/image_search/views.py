@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from django.core.files.base import ContentFile
 from django.http import HttpResponseRedirect
+from django.http import Http404
 
 from image_search.forms import ImageUploadForm
 from image_search.models import RequestImage
@@ -45,4 +46,6 @@ def search(request):
                 if response_data['status'] == u'completed':
                     return HttpResponseRedirect('{}?q={}'.format(reverse('search:search'), response_data['name']))
         else:
-            pass
+            raise Http404('Invalid form', 'Invalid image')
+    else:
+	raise Http404('Invalid form', 'Invalid image')
