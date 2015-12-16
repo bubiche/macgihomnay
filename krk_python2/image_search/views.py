@@ -1,16 +1,11 @@
 from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from django.core.files.base import ContentFile
-<<<<<<< HEAD
-from django.http import HttpResponseRedirect
-from django.http import Http404
-=======
 from django.http import HttpResponseRedirect, HttpResponseBadRequest
->>>>>>> 766f192473f6e00144defbcbbfadff588081d79c
 
 from image_search.forms import ImageUploadForm
-from django.http import HttpResponseRedirect, HttpResponseBadRequest
-ge
+from image_search.models import RequestImage
+
 import requests
 import json
 import urlparse
@@ -50,13 +45,6 @@ def search(request):
                 if response_data['status'] == u'completed':
                     return HttpResponseRedirect('{}?q={}'.format(reverse('search:search'), response_data['name']))
         else:
-<<<<<<< HEAD
-             return HttpResponseBadRequest()
-      else:
-	  return HttpResponseBadRequest() 
-   
-=======
             return HttpResponseBadRequest()
     else:
         return HttpResponseBadRequest()
->>>>>>> 766f192473f6e00144defbcbbfadff588081d79c
