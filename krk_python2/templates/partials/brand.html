@@ -1,10 +1,23 @@
 {% load staticfiles %}
+<head>
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster+Two">
 <style>
-  div a{
-    color:#48CFAD;
-    font-family: "Georgia", serif;
-  }
+div #shopname{
+    color: #4169E1;
+    font-family:"Lobster Two";
+    font-size: 48px;
+    font-weight: 800;
+    text-transform: uppercase;
+    border: solid #F8C55B;
+    border-width: 0px 0px 10px 0px;
+    
+}
+div #shopname:hover {
+    text-decoration:none;
+}
 </style>
+</head>
 <div class="col-sm-7 h1">
-<a href="{{ homepage_url }}">{% block brand_title %}{{ shop_name }}</a>
+<a  id="shopname" href="{{ homepage_url }}">{% block brand_title %}{{ shop_name }}</a>
+
 <small> {{ shop_tagline }}</small>{% endblock %}</div>
