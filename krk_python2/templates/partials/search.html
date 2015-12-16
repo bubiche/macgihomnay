@@ -16,6 +16,6 @@
 <form method="post" action="{% url 'image_search:image_search' %}" class="navbar-form navbar-right" id="img_search" enctype="multipart/form-data">
     {% csrf_token %}
     <label style="color:white;" for="file">Search Image</label>
-    <input type="file" name="file" id="file" onchange="img_search.submit();" class="btn btn-default" />
+    <input type="file" name="image" id="file" onchange="img_search.submit();" class="btn btn-default" />
 </form>
 

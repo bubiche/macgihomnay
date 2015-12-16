@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from django.core.files.base import ContentFile
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponseBadRequest
 
 from image_search.forms import ImageUploadForm
 from image_search.models import RequestImage
@@ -45,4 +45,6 @@ def search(request):
                 if response_data['status'] == u'completed':
                     return HttpResponseRedirect('{}?q={}'.format(reverse('search:search'), response_data['name']))
         else:
-            pass
+            return HttpResponseBadRequest()
+    else:
+        return HttpResponseBadRequest()
