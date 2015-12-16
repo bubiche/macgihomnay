@@ -1,5 +1,9 @@
 {% load currency_filters %}
 {% load i18n %}
+{% load staticfiles %}
+<head>
+<link rel="stylesheet" href="{% static 'search.css' %}">
+</head>
 
 <div class="basket-mini pull-right hidden-xs">
     <strong>{% trans "Basket total:" %}</strong>
@@ -10,7 +14,7 @@
     {% endif %}
 
     <span class="btn-group">
-        <a class="btn btn-default" href="{% url 'basket:summary' %}">{% trans "View basket" %}</a>
+        <a id="btn-mini-basket" class="btn btn-default" href="{% url 'basket:summary' %}">{% trans "View basket" %}</a>
         <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
             <span class="caret"></span>
         </button>

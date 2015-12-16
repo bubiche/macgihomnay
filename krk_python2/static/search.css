@@ -1,19 +1,50 @@
-
 #btn-search{
-  background-color: #48CFAD !important;
+  background-color: #3498DB !important;
   color: white;
   font-size: 15px;
+  -webkit-transition-duration: 0.4s; 
+  transition-duration: 0.4s;
+  border-color: #3498DB;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 6px;
+}
+#btn-search:hover {
+    background-color: white !important;
+    color:#3498DB;
+    
 }
 label[for="file"] {
-  background-color: #48CFAD;
+  background-color: #3498DB;
+  color:white;
   border-radius: 5px;
-  padding: 6.5px;
+  padding: 6px;
   text-align: justify;
   font-size: 15px;
   font-weight: 100;
   cursor: pointer;
-  margin-top: 1px;
+  margin-top: 0px;
+  -webkit-transition-duration: 0.4s; 
+  transition-duration: 0.4s;
+  border-color: #3498DB;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 6px;
+}
+label[for="file"]:hover {
+  background-color: white;
+  color: #3498DB;
 }
 input[type="file"] {
   display: none;
+}
+#btn-mini-basket{
+  color: white;
+  background-color: rgb(52, 152, 219);
+  font-size: 15px;
+}
+
+#btn-mini-basket
+{
+  
 }
