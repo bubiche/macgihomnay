@@ -5,12 +5,12 @@
 {% load staticfiles %}
 
 {% block product %}
-    <article class="product_pod">
+    <article class="product_pod" style="height: 575px; width:290px " >
         {% block product_image %}
-            <div class="image_container">
+            <div class="portrait" >
                 {% with image=product.primary_image %}
-                    {% thumbnail image.original "x155" upscale=False as thumb %}
-                    <a href="{{ product.get_absolute_url }}"><img src="{{ thumb.url }}" alt="{{ product.get_title }}" class="thumbnail"></a>
+                    {% thumbnail image.original "x400" crop="right" as thumb %}
+                    <a href="{{ product.get_absolute_url }}"><img src="{{ thumb.url }}" alt="{{ product.get_title }}" class="thumbnail" style="background-position:center; height:411.25px; width:288.75px "></a>
                     {% endthumbnail %}
                 {% endwith %}
             </div>
@@ -18,7 +18,7 @@
 
         {% block product_review %}
             {% iffeature "reviews" %}
-                <p class="star-rating {{ product.rating|as_stars }}">
+                <p class="star-rating {{ product.rating|as_stars }}" style="font-size:20px">
                     <i class="icon-star"></i>
                     <i class="icon-star"></i>
                     <i class="icon-star"></i>
@@ -29,7 +29,7 @@
         {% endblock %}
 
         {% block product_title %}
-            <h3><a href="{{ product.get_absolute_url }}" title="{{ product.get_title }}">{{ product.get_title|truncatewords:4 }}</a></h3>
+            <h3><a href="{{ product.get_absolute_url }}" title="{{ product.get_title }}" style="font-size:18px">{{ product.get_title|truncatewords:4 }}</a></h3>
         {% endblock %}
 
         {% block product_price %}
