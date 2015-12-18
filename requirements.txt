@@ -11,7 +11,6 @@ django-extensions==1.5.9
 django-extra-views==0.6.4
 django-haystack==2.3.1
 django-localflavor==1.1
-git+https://github.com/django-oscar/django-oscar.git
 git+https://github.com/django-oscar/django-oscar-paypal.git
 git+https://github.com/pauloprea/django-oscar-cash-on-delivery.git
 django-paypal==0.2.7
